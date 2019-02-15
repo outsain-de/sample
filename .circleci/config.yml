@@ -8,9 +8,24 @@ jobs:
       - checkout
 
       - run:
-          name: Install Requirements
+          name: Install Base Requirements
           command: apt update && apt upgrade -y && apt install make -y
-          
+      
+      - run:
+          name: Install Docker
+          command: |
+                    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+                    add-apt-repository \
+                        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+                        $(lsb_release -cs) \
+                        stable"
+                    apt-get update
+                    apt-get install docker-ce -y
+      
+      - run:
+          name: list directory
+          command: ls -lha
+                    
       - run: 
           name: run building test docker image
-          command: make -c service-1 
+          command: make -C service-1 
