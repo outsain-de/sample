@@ -24,6 +24,8 @@ jobs:
                         stable"
                     apt-get update
                     apt-get install docker-ce -y
+                    systemctl enable docker
+
       - run:
           name: docker verions
           command: |
