@@ -20,3 +20,11 @@ jobs:
       - run: 
           name: run building test docker image
           command: make -C service-1 
+
+      - run: 
+          name: Checkout new repo
+          command: git clone git@git.outsain.com:ktx/gitlab-ci-test.git
+
+
+
+
