@@ -2,4 +2,5 @@ BRANCH=${CIRCLE_BRANCH}
 
 IMG=myimage:$(BRANCH)
 
-docker build -t $(IMG) .
+all:
+	docker build -t $(IMG) .
