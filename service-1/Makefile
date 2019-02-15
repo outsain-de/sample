@@ -1,4 +1,4 @@
-BRANCH  ?= $(shell git rev-parse --abbrev-ref HEAD)
+BRANCH = ${CIRCLE_BRANCH}
 ifeq ($(BRANCH),master)
         BRANCH=latest
 endif
