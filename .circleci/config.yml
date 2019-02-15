@@ -24,6 +24,12 @@ jobs:
                         stable"
                     apt-get update
                     apt-get install docker-ce -y
+      - run:
+          name: docker verions
+          command: |
+                    which docker
+                    docker --version 
+
 
       - run:
           name: Start docker daemon
