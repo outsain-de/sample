@@ -12,7 +12,7 @@ jobs:
           command: |
                     apt update 
                     apt upgrade -y 
-                    apt install software-properties-common apt-transport-https curl make -y
+                    apt install software-properties-common apt-transport-https gnupg2 curl make -y
                      
       - run:
           name: Install Docker
