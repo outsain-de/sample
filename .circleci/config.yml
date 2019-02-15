@@ -12,7 +12,6 @@ jobs:
           name: Install Base Requirements
           command: |
                     sudo apt update 
-                    sudo apt upgrade -y 
                     sudo apt install software-properties-common apt-transport-https gnupg2 curl make -y    
       - run:
           name: list directory
