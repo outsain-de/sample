@@ -2,11 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: ubuntu:16.04
 
     steps:
       - checkout
 
       - run:
-          name: Greeting
+          name: Install Requirements
+          command: sudo apt update && sudo apt install make -y
+          
+      - run: 
+          name: run building test docker image
           command: make -c service-1 
