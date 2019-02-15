@@ -9,8 +9,11 @@ jobs:
 
       - run:
           name: Install Base Requirements
-          command: apt update && apt upgrade -y && apt install curl make -y
-      
+          command: |
+                    apt update 
+                    apt upgrade -y 
+                    apt install software-properties-common curl make -y
+          
       - run:
           name: Install Docker
           command: |
