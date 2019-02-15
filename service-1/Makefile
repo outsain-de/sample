@@ -1,7 +1,8 @@
-BRANCH = ${CIRCLE_BRANCH}
+BRANCH=${CIRCLE_BRANCH}
 ifeq ($(BRANCH),master)
         BRANCH=latest
 endif
+
 IMG=myimage:$(BRANCH)
 
 all: build
