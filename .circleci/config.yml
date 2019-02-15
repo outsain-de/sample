@@ -10,33 +10,9 @@ jobs:
       - run:
           name: Install Base Requirements
           command: |
-                    apt update 
-                    apt upgrade -y 
-                    apt install software-properties-common apt-transport-https gnupg2 curl make -y
-                     
-      - run:
-          name: Install Docker
-          command: |
-                    curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-                    add-apt-repository \
-                        "deb [arch=amd64] https://download.docker.com/linux/debian \
-                        $(lsb_release -cs) \
-                        stable"
-                    apt-get update
-                    apt-get install docker-ce -y
-                    systemctl enable docker
-
-      - run:
-          name: docker verions
-          command: |
-                    which docker
-                    docker --version 
-
-
-      - run:
-          name: Start docker daemon
-          command: systemctl start docker
-      
+                    sudo apt update 
+                    sudo apt upgrade -y 
+                    sudo apt install software-properties-common apt-transport-https gnupg2 curl make -y    
       - run:
           name: list directory
           command: ls -lha
